@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<link href="css/index.css" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<style type="text/css">
+body {
+	background-color:#396DA5;
+	margin:0px;
+	padding:0px;
+	color:#fff;
+	font:"微软雅黑";
+	font-size:14px;}
+	
+.window {
+	border:6px #ccc outset;
+	width:680px;
+	height:442px;
+	background-color:#000;
+	position:absolute;
+	top:40px;
+	left:68px;
+	overflow:hidden}
+
+.title {
+		background-color:#08246B;
+		padding:2px;}
+	
+#text {
+		background-color:#000;
+		border-top:#ccc outset 2px;
+		height:420px;
+		overflow-y:scroll;}
+	
+ul {
+		margin:0px;
+		padding:0px;
+		list-style:none;}
+	
+
+</style>
+<body>
+    <div class="window">
+        <div class="title">
+            <span>手机号</span>
+            <input type="text"  id="phone" style="color:black" />
+            <input type="button" onclick="start()" value="提交" style="color:black" />
+        </div>
+        <div id="text">
+            <ul>
+                <li>Welcome...</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+@section scripts {
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script>
+        function start() {
+            //无代理
+            var conn = $.hubConnection();
+            var proxy = conn.createHubProxy("myHub");
+            var msg = $("#phone").val();
+            //注册客户端方法 “hello”
+            proxy.on("SendMessage", function (data) {
+                console.log("客户端方法被调用");
+                debugger
+                $("ul").append("<li>" + data + "</li>");   
+                $("#text").scrollTop($("#text").scrollTop() + 32);
+            });
+            conn.start().done(function (data) {
+                //调用服务器方法
+                proxy.invoke("SendMessage", msg);
+            });
+        }
+        function start1() {
+            debugger
+            var mypush = $.connection.myHub;
+            
+            $.connection.hub.start();
+            //mypush.client.SendMessage = function (msg) {
+            //    console.log(msg);
+            //    $("ul").append("<li>" + msg + "</li>");             //获取返回值并输出
+            //    $("#text").scrollTop($("#text").scrollTop() + 32);//滚动条拉到最下面，显示出输入框
+            //};
+            mypush.client.SendMessage = function (data) {
+                console.log("客户端方法被调");
+            }
+            mypush.invoke("SendMessage", msg).catch(err => console.error(err.toString()));
+        }
+    </script>
+}

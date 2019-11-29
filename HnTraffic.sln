@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HnTraffic", "HnTraffic\HnTraffic.csproj", "{C80B3321-F337-4D25-8A7E-4FFDEC45AB91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HnydWeb", "HnydWeb\HnydWeb.csproj", "{F4D7C880-1490-46B6-B1E4-91CDB08F493E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C80B3321-F337-4D25-8A7E-4FFDEC45AB91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C80B3321-F337-4D25-8A7E-4FFDEC45AB91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C80B3321-F337-4D25-8A7E-4FFDEC45AB91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C80B3321-F337-4D25-8A7E-4FFDEC45AB91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4D7C880-1490-46B6-B1E4-91CDB08F493E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4D7C880-1490-46B6-B1E4-91CDB08F493E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4D7C880-1490-46B6-B1E4-91CDB08F493E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4D7C880-1490-46B6-B1E4-91CDB08F493E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D17213B1-A16F-45C9-AA9B-3AB5D73238BF}
+	EndGlobalSection
+EndGlobal
