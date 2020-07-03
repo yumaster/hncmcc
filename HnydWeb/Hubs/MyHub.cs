@@ -34,11 +34,7 @@ namespace HnydWeb.Hubs
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
                 //string result = HTTPClientHelper.HttpPostRequestAsync("https://h5.ha.chinamobile.com/hnmccClientWap/RecommendedGift2019_9/allrecommendx.action", paramArray, "https://h5.ha.chinamobile.com/hnmccClientWap/2019/09/recommendGift/index.html?jmphone=" + comPhone + "");
                 //string result = HTTPClientHelper.HttpPostRequestAsync("https://h5.ha.chinamobile.com/hnmccClientWap/RecommendedGift2019_12/allrecommendx.action", paramArray, "https://h5.ha.chinamobile.com/hnmccClientWap/2019/12/recommendGift/index.html?jmphone=" + comPhone + "");
-<<<<<<< HEAD
                 string result = HTTPClientHelper.HttpPostRequestAsync("https://h5.ha.chinamobile.com/hnmccClientWap/RecommendedGift2020_06/allrecommendx.action", paramArray, "https://h5.ha.chinamobile.com/hnmccClientWap/2020/06/recommendGift/index.html?jmphone=" + comPhone + "");
-=======
-                string result = HTTPClientHelper.HttpPostRequestAsync("https://h5.ha.chinamobile.com/hnmccClientWap/RecommendedGift2020_03/allrecommendx.action", paramArray, "https://h5.ha.chinamobile.com/hnmccClientWap/2020/03/recommendGift/index.html?jmphone=" + comPhone + "");
->>>>>>> b776cfbcbf3ab78d290d1bafc8198aa03853f5e2
                 paramArray.RemoveRange(0, 2);
                 await Clients.All.SendMessage(result);
             }
